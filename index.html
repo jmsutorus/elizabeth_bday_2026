@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elizabeth's Pearl Jubilee</title>
+<meta name="description" content="Hear ye! Elizabeth turns thirty. Join the revels at the New Braunfels Renaissance Faire on Saturday, December 12, 2026.">
+<meta property="og:title" content="Hear ye! Elizabeth turns thirty">
+<meta property="og:description" content="Join the revels at the New Braunfels Renaissance Faire, Saturday, December 12 at 10 in the morning.">
+<meta property="og:image" content="images/joust.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@400;600;800&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --tapestry: #17352b;
+  --tapestry-deep: #0f261e;
+  --vellum: #f1e6c8;
+  --vellum-shade: #e4d5ab;
+  --ink: #2b1d14;
+  --vermilion: #c7321f;
+  --lapis: #1f4e9c;
+  --gold: #d9a520;
+  --vine: #2f6b3a;
+  --rose: #c96a8c;
+  --display: "Grenze Gotisch", "Luminari", "Old English Text MT", fantasy;
+  --body: "IM Fell English", "Hoefler Text", Georgia, serif;
+  --stripes: repeating-linear-gradient(45deg, var(--vermilion) 0 10px, var(--gold) 10px 20px, var(--lapis) 20px 30px, var(--gold) 30px 40px);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--tapestry);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: clamp(1.1rem, 0.6vw + 1rem, 1.3rem);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--lapis); }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.05; margin: 0; }
+h2 { font-size: clamp(2.4rem, 6vw, 4rem); color: var(--vermilion); }
+h3 { font-size: clamp(1.6rem, 3vw, 2rem); }
+p { margin: 0 0 1em; max-width: 62ch; }
+
+/* ---------- bunting ---------- */
+.bunting { position: absolute; top: 0; left: 0; width: 100%; height: clamp(60px, 9vw, 110px); z-index: 3; transform-origin: top; animation: unfurl 1s cubic-bezier(.2,1.4,.4,1) both; }
+@keyframes unfurl { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+
+/* ---------- hero ---------- */
+.hero {
+  position: relative;
+  min-height: min(100svh, 1000px);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: clamp(80px, 10vw, 120px) 16px 90px;
+  color: var(--vellum);
+  background: linear-gradient(to bottom, transparent 75%, var(--tapestry) 100%), radial-gradient(ellipse at 50% 40%, #1f4a3b 0%, var(--tapestry) 55%, var(--tapestry-deep) 100%);
+  overflow: hidden;
+}
+#meadow { position: absolute; inset: 0; width: 100%; height: 100%; }
+.hero-inner { position: relative; z-index: 2; max-width: 900px; }
+.crest { width: clamp(84px, 11vw, 120px); margin: 0 auto 8px; animation: rise .9s .5s both; }
+.cry { font-style: italic; font-size: clamp(1.3rem, 3vw, 1.9rem); color: var(--gold); margin: 0 auto .2em; animation: rise .9s .7s both; }
+.hero h1 {
+  font-size: clamp(4.2rem, 15vw, 9.5rem);
+  font-weight: 800;
+  line-height: .86;
+  color: var(--vellum);
+  text-shadow: 0 .035em 0 var(--vermilion), 0 .07em 0 var(--tapestry-deep);
+  animation: rise .9s .85s both;
+}
+.hero h1 span { display: block; font-size: .46em; font-weight: 600; color: var(--gold); text-shadow: 0 .05em 0 var(--tapestry-deep); margin-top: .12em; }
+.hero .lede { margin: .9em auto 0; max-width: 34ch; font-size: 1.15em; animation: rise .9s 1s both; }
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+
+.ribbon {
+  display: inline-block; position: relative;
+  margin: 1.1em 0 0; padding: .45em 1.6em .5em;
+  background: var(--vermilion); color: var(--vellum);
+  font-family: var(--display); font-size: clamp(1.4rem, 3.6vw, 2.2rem); line-height: 1.15;
+  box-shadow: 0 4px 0 rgba(0,0,0,.3);
+  animation: rise .9s 1.15s both;
+}
+.ribbon::before, .ribbon::after {
+  content: ""; position: absolute; top: 10px; width: 34px; height: 100%; background: #9c2414; z-index: -1;
+}
+.ribbon::before { left: -22px; clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 45% 50%); }
+.ribbon::after { right: -22px; clip-path: polygon(0 0, 100% 0, 55% 50%, 100% 100%, 0 100%); }
+
+.countdown { display: flex; justify-content: center; gap: clamp(8px, 2.5vw, 22px); margin: 2.2em 0 0; padding: 0; list-style: none; animation: rise .9s 1.3s both; }
+.countdown li {
+  width: clamp(68px, 17vw, 104px); padding: 14px 4px 26px;
+  background: var(--vellum); color: var(--ink);
+  clip-path: polygon(0 0, 100% 0, 100% 78%, 50% 100%, 0 78%);
+  font-size: .85rem; line-height: 1.1;
+}
+.countdown li:nth-child(odd) { background: var(--gold); }
+.countdown b { display: block; font-family: var(--display); font-size: clamp(2rem, 6vw, 3.2rem); font-weight: 800; line-height: 1; font-variant-numeric: tabular-nums; }
+.countdown-note { margin: .8em auto 0; font-style: italic; color: var(--gold); }
+.onward { display: inline-block; margin-top: 2em; color: var(--vellum); font-style: italic; }
+
+/* ---------- vellum pages ---------- */
+main { padding: 0 16px 60px; }
+.page {
+  position: relative;
+  max-width: 1060px; margin: 0 auto clamp(40px, 7vw, 80px);
+  padding: clamp(28px, 6vw, 72px);
+  background: var(--vellum) radial-gradient(ellipse at 20% 10%, rgba(255,255,255,.35), transparent 60%);
+  border: 14px solid; border-image: var(--stripes) 14;
+  box-shadow: 0 0 0 3px var(--tapestry-deep), 0 18px 40px rgba(0,0,0,.45);
+}
+.page:first-child { margin-top: clamp(-50px, -4vw, -20px); }
+.page > h2 { margin-bottom: .35em; }
+.dropcap::first-letter {
+  float: left; font-family: var(--display); font-weight: 800; font-size: 3.6em; line-height: .8;
+  padding: .12em .14em .1em; margin: .06em .14em 0 0;
+  color: var(--vellum); background: var(--lapis); box-shadow: inset 0 0 0 3px var(--gold);
+}
+
+/* ---------- portraits ---------- */
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(14px, 3vw, 34px); margin: 1.6em 0 0; align-items: start; }
+.portrait { margin: 0; text-align: center; font-style: italic; }
+.portrait:nth-child(1) { transform: rotate(-2deg); }
+.portrait:nth-child(2) { transform: translateY(18px) rotate(1deg); }
+.portrait:nth-child(3) { transform: rotate(2.5deg); }
+.frame {
+  aspect-ratio: 3 / 4; padding: 10px; margin-bottom: .5em;
+  background: linear-gradient(135deg, #f0c64a, #a87708 45%, #f3d062 55%, #8a5f05);
+  border-radius: 50% 50% 6px 6px / 34% 34% 6px 6px;
+  box-shadow: 0 8px 18px rgba(43,29,20,.35);
+}
+.frame > * { width: 100%; height: 100%; object-fit: cover; border-radius: inherit; background: var(--lapis); }
+.frame svg { padding: 14%; }
+.titles { margin: 2.6em 0 0; padding: 0; list-style: none; columns: 2 280px; column-gap: 2.5em; }
+.titles li { break-inside: avoid; padding: .15em 0 .15em 1.6em; position: relative; }
+.titles li::before { content: "❦"; position: absolute; left: 0; color: var(--vermilion); }
+
+/* ---------- details ---------- */
+.details { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(24px, 5vw, 60px); align-items: center; }
+.facts { margin: 1.2em 0 1.6em; }
+.facts dt { font-family: var(--display); font-size: 1.5em; color: var(--lapis); line-height: 1.1; }
+.facts dd { margin: 0 0 1em; }
+.buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  font: inherit; font-family: var(--display); font-size: 1.35em; line-height: 1; cursor: pointer;
+  padding: .5em 1em .55em; border: 3px solid var(--ink); border-radius: 4px;
+  background: var(--gold); color: var(--ink); text-decoration: none;
+  box-shadow: 4px 4px 0 var(--ink); transition: transform .12s, box-shadow .12s;
+}
+.btn:hover { transform: translate(-1px, -1px); box-shadow: 6px 6px 0 var(--ink); }
+.btn:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--ink); }
+.btn.red { background: var(--vermilion); color: var(--vellum); }
+.btn.plain { background: var(--vellum); }
+.plate { margin: 0; }
+.plate img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border: 3px solid var(--ink); box-shadow: 8px 8px 0 var(--lapis); }
+.plate figcaption { font-style: italic; font-size: .85em; margin-top: 1em; }
+
+/* ---------- delights ---------- */
+.delights { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(18px, 3vw, 36px); margin-top: 1.4em; }
+.delights article img { width: 100%; aspect-ratio: 1; object-fit: cover; border: 3px solid var(--ink); margin-bottom: .8em; }
+.delights h3 { color: var(--lapis); margin-bottom: .25em; }
+.delights p { font-size: .95em; margin: 0; }
+.counsel { margin: 2.4em 0 0; padding: 1.2em 1.4em; background: var(--vellum-shade); border-left: 6px solid var(--vine); }
+.counsel h3 { color: var(--vine); margin-bottom: .3em; }
+.counsel ul { margin: 0; padding-left: 1.2em; }
+.counsel li { margin-bottom: .3em; max-width: 62ch; }
+
+/* ---------- name scribe ---------- */
+.scribe { text-align: center; }
+.scribe p { margin-inline: auto; }
+.scribe form { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 1.4em 0; }
+.scribe label { text-align: left; font-style: italic; font-size: .9em; display: grid; gap: 2px; }
+.scribe input, .scribe select {
+  height: 2.5em;
+  font: inherit; font-size: 1.1em; padding: .4em .6em; min-width: 0; width: min(100%, 15em);
+  border: 3px solid var(--ink); border-radius: 4px; background: #fbf5e2; color: var(--ink);
+}
+.scribe form .btn { align-self: end; }
+.decree { position: relative; min-height: 5.5em; padding: 1em; }
+.decree .name { font-family: var(--display); font-weight: 800; font-size: clamp(2rem, 6vw, 3.6rem); line-height: 1; color: var(--vermilion); margin: 0 auto .2em; max-width: none; }
+.decree .duty { font-style: italic; margin: 0 auto; }
+.decree.pop .name { animation: stamp .45s cubic-bezier(.2,1.6,.4,1); }
+@keyframes stamp { from { transform: scale(1.5) rotate(-4deg); opacity: 0; } to { transform: none; opacity: 1; } }
+.petal { position: absolute; left: 50%; top: 40%; width: 12px; height: 12px; border-radius: 80% 0 80% 0; pointer-events: none; animation: fling 1.1s ease-out forwards; }
+@keyframes fling { to { transform: translate(var(--dx), var(--dy)) rotate(var(--r)); opacity: 0; } }
+
+/* ---------- rsvp ---------- */
+.rsvp { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(24px, 5vw, 60px); align-items: center; }
+.rsvp .plate img { box-shadow: -8px 8px 0 var(--vermilion); }
+.signoff { font-family: var(--display); font-size: 1.7em; color: var(--lapis); line-height: 1.1; }
+
+footer { color: var(--vellum); text-align: center; padding: 0 16px 50px; font-size: .85em; }
+footer p { margin: 0 auto .5em; opacity: .85; }
+footer a { color: var(--gold); }
+
+@media (max-width: 760px) {
+  .details, .rsvp, .delights { grid-template-columns: 1fr; }
+  .page { border-width: 10px; }
+  .gallery { gap: 10px; }
+  .frame { padding: 6px; }
+  .portrait figcaption { font-size: .8em; }
+  .delights article img { aspect-ratio: 4 / 3; }
+  .rsvp .plate { max-width: 320px; margin-inline: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <svg class="bunting" id="bunting" preserveAspectRatio="none" aria-hidden="true"></svg>
+  <svg id="meadow" aria-hidden="true"></svg>
+
+  <div class="hero-inner">
+    <svg class="crest" viewBox="0 0 120 150" role="img" aria-label="A royal crest bearing the letter E">
+      <path d="M30 34 L24 8 L44 22 L60 2 L76 22 L96 8 L90 34 Z" fill="#d9a520" stroke="#2b1d14" stroke-width="3" stroke-linejoin="round"/>
+      <circle cx="24" cy="8" r="5" fill="#f1e6c8" stroke="#2b1d14" stroke-width="2"/>
+      <circle cx="60" cy="3" r="5" fill="#f1e6c8" stroke="#2b1d14" stroke-width="2"/>
+      <circle cx="96" cy="8" r="5" fill="#f1e6c8" stroke="#2b1d14" stroke-width="2"/>
+      <path d="M12 42 H108 V92 C108 122 84 138 60 148 C36 138 12 122 12 92 Z" fill="#1f4e9c" stroke="#2b1d14" stroke-width="3"/>
+      <path d="M12 42 H60 V148 C36 138 12 122 12 92 Z" fill="#c7321f"/>
+      <path d="M12 42 H108 V92 C108 122 84 138 60 148 C36 138 12 122 12 92 Z" fill="none" stroke="#d9a520" stroke-width="3" transform="translate(6 5.6) scale(.9)"/>
+      <path d="M12 42 H108 V92 C108 122 84 138 60 148 C36 138 12 122 12 92 Z" fill="none" stroke="#2b1d14" stroke-width="3"/>
+      <text x="60" y="112" text-anchor="middle" font-family="Grenze Gotisch, fantasy" font-weight="800" font-size="66" fill="#f1e6c8" stroke="#2b1d14" stroke-width="1.5">E</text>
+    </svg>
+
+    <p class="cry">Hear ye, hear ye!</p>
+    <h1>Elizabeth <span>turns thirty</span></h1>
+    <p class="lede">Thirty glorious years upon the throne, and the whole realm is summoned to make merry.</p>
+
+    <p class="ribbon">Saturday, December 12 at 10 in the morning</p>
+
+    <ul class="countdown" id="countdown" aria-label="Time until the party">
+      <li><b data-u="d">–</b>days</li>
+      <li><b data-u="h">–</b>hours</li>
+      <li><b data-u="m">–</b>minutes</li>
+      <li><b data-u="s">–</b>seconds</li>
+    </ul>
+    <p class="countdown-note" id="countdown-note">until the gates open</p>
+
+    <a class="onward" href="#revels">Read the royal summons ↓</a>
+  </div>
+</header>
+
+<main>
+  <section class="page" id="reign">
+    <h2>The Elizabethan age</h2>
+    <p class="dropcap">On the ninth day of December, in the year 1996, the realm received its finest monarch. Three decades on, her reign has been marked by great laughter, good counsel, and an unbroken record of being right about most things. A thirtieth year is a pearl jubilee, and a jubilee demands a faire.</p>
+
+    <div class="gallery" id="gallery">
+      <figure class="portrait"><div class="frame"><img src="images/elizabeth-1.jpg" alt="Elizabeth"></div><figcaption>Her Majesty, in splendour</figcaption></figure>
+      <figure class="portrait"><div class="frame"><img src="images/elizabeth-2.jpg" alt="Elizabeth"></div><figcaption>Her Majesty, at leisure</figcaption></figure>
+      <figure class="portrait"><div class="frame"><img src="images/elizabeth-3.jpg" alt="Elizabeth"></div><figcaption>Her Majesty, mid-mischief</figcaption></figure>
+    </div>
+
+    <ul class="titles" aria-label="Her Majesty's titles">
+      <li>Elizabeth, Thirtieth of Her Year</li>
+      <li>Queen of the Birthday Realm</li>
+      <li>Sovereign of Snacks and Defender of Dessert</li>
+      <li>Duchess of the Dance Floor</li>
+      <li>Keeper of the Good Blanket</li>
+      <li>Breaker of Diets, Mother of Plans</li>
+    </ul>
+  </section>
+
+  <section class="page" id="revels">
+    <div class="details">
+      <div>
+        <h2>The royal summons</h2>
+        <p>Thou art invited to a day of jousting, feasting and general tomfoolery in honour of the birthday queen.</p>
+        <dl class="facts">
+          <dt>When</dt>
+          <dd>Saturday, December 12, 2026. We gather at 10 in the morning, when the gates open.</dd>
+          <dt>Where</dt>
+          <dd>New Braunfels Renaissance Faire<br>Heritage Village, 1370 Church Hill Drive<br>New Braunfels, Texas</dd>
+          <dt>Entry</dt>
+          <dd>Each guest needs a faire ticket for Saturday. Buy thine ahead of time from the faire.</dd>
+        </dl>
+        <div class="buttons">
+          <a class="btn red" href="https://nbrenfaire.com" target="_blank" rel="noopener">Get faire tickets</a>
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Heritage+Village+1370+Church+Hill+Dr+New+Braunfels+TX" target="_blank" rel="noopener">Get directions</a>
+          <button class="btn plain" id="ics" type="button">Add to calendar</button>
+        </div>
+      </div>
+      <figure class="plate">
+        <img src="images/joust.jpg" alt="Medieval manuscript painting of two knights jousting while five ladies watch from a balcony" style="object-position: 50% 62%">
+        <figcaption>The ladies of the court, visibly thrilled to be invited.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="page" id="delights">
+    <h2>What awaits thee</h2>
+    <div class="delights">
+      <article>
+        <img src="images/joust.jpg" alt="Two armoured knights on horseback clash with lances" style="object-position: 50% 78%" loading="lazy">
+        <h3>Knights, clashing</h3>
+        <p>Jousts and sword fights, fought by professionals so that we need not. Cheer loudly and pick a favourite.</p>
+      </article>
+      <article>
+        <img src="images/minstrels.jpg" alt="A crowd of medieval musicians playing fiddles, pipes and drums" style="object-position: 50% 80%" loading="lazy">
+        <h3>Minstrels, minstreling</h3>
+        <p>Live music, wandering players and shows all day, plus stalls of artisan wares for the weak of will.</p>
+      </article>
+      <article>
+        <img src="images/dance.jpg" alt="A knight in a great helm dances hand in hand with two ladies while a fiddler plays" style="object-position: 50% 60%" loading="lazy">
+        <h3>Feasting and frolic</h3>
+        <p>Turkey legs the size of thy forearm, a cup of something festive, and dancing for those so moved.</p>
+      </article>
+    </div>
+
+    <div class="counsel">
+      <h3>Counsel for travellers</h3>
+      <ul>
+        <li>Garb is heartily encouraged and never required. Knights, fairies, pirates, wizards and people in jeans are all welcome at court.</li>
+        <li>The faire is out of doors. December in Texas is fickle, so wear layers under thy cloak and shoes fit for walking.</li>
+        <li>Bring coin for food, drink and trinkets.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="page scribe" id="scribe">
+    <h2>Claim thy faire name</h2>
+    <p>No one enters the queen's court as a commoner. Tell the royal scribe thy name and receive a title to bear on the day.</p>
+    <form id="scribe-form">
+      <label>Thy name
+        <input id="guest" name="guest" autocomplete="given-name" maxlength="30" required placeholder="e.g. Joseph">
+      </label>
+      <label>Thy calling
+        <select id="calling">
+          <option>Lady</option><option>Lord</option><option>Dame</option><option>Sir</option>
+          <option>Wizard</option><option>Bard</option><option>Rogue</option><option>Captain</option>
+        </select>
+      </label>
+      <button class="btn red" type="submit">Summon my title</button>
+    </form>
+    <div class="decree" id="decree" aria-live="polite">
+      <p class="duty">Thy title shall appear here.</p>
+    </div>
+  </section>
+
+  <section class="page" id="rsvp">
+    <div class="rsvp">
+      <figure class="plate">
+        <img src="images/falcon.jpg" alt="Medieval manuscript painting of a lady embracing a reclining nobleman who holds a falcon, beneath a rose vine" style="object-position: 50% 80%" loading="lazy">
+      </figure>
+      <div>
+        <h2>Send word</h2>
+        <p class="dropcap">Pray tell Joseph whether thou shalt attend, that we may know how many turkey legs to brace for. A text, a raven or a well-trained falcon will all do nicely.</p>
+        <p id="rsvp-slot"></p>
+        <p class="signoff">Long may she reign.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Made with love for Elizabeth, by her most devoted knight.</p>
+  <p>Paintings from the Codex Manesse, Zürich, about 1304 to 1340, held by Heidelberg University Library. Public domain, via <a href="https://commons.wikimedia.org/wiki/Category:Codex_Manesse">Wikimedia Commons</a>.</p>
+</footer>
+
+<script>
+/* ---------- things to edit ---------- */
+const CONFIG = {
+  // Party start. Central Standard Time is UTC-6.
+  partyStart: "2026-12-12T10:00:00-06:00",
+  partyEnd:   "2026-12-12T16:00:00-06:00",
+  // Optional RSVP link (a form, an "sms:+1..." link, or "mailto:..."). Leave empty to show no button.
+  rsvpUrl: "",
+  rsvpLabel: "Send thy reply",
+};
+
+const COLORS = ["#c7321f", "#d9a520", "#1f4e9c", "#f1e6c8", "#c96a8c", "#2f6b3a"];
+const NS = "http://www.w3.org/2000/svg";
+const el = (name, attrs) => { const n = document.createElementNS(NS, name); for (const k in attrs) n.setAttribute(k, attrs[k]); return n; };
+function rng(seed) { return () => (seed = (seed * 1664525 + 1013904223) >>> 0) / 4294967296; }
+
+/* ---------- bunting ---------- */
+(function bunting() {
+  const svg = document.getElementById("bunting"), n = 16, W = 1600, H = 110;
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  const sag = x => 6 + 16 * Math.sin(Math.PI * ((x % 400) / 400));
+  for (let i = 0; i < n; i++) {
+    const x0 = i * W / n, x1 = (i + 1) * W / n, xm = (x0 + x1) / 2;
+    svg.append(el("path", { d: `M${x0 + 4} ${sag(x0 + 4)} L${x1 - 4} ${sag(x1 - 4)} L${xm} ${sag(xm) + 78} Z`, fill: COLORS[i % 5], stroke: "#0f261e", "stroke-width": 2 }));
+  }
+  let d = "M0 6";
+  for (let x = 0; x <= W; x += 20) d += ` L${x} ${sag(x)}`;
+  svg.append(el("path", { d, fill: "none", stroke: "#f1e6c8", "stroke-width": 3 }));
+})();
+
+/* ---------- millefleur meadow ---------- */
+(function meadow() {
+  const svg = document.getElementById("meadow"), r = rng(1996);
+  const W = 1200, H = 900;
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  svg.setAttribute("preserveAspectRatio", "xMidYMid slice");
+  const petals = ["#c7321f", "#f1e6c8", "#d9a520", "#c96a8c", "#6f9fe0"];
+  for (let i = 0; i < 150; i++) {
+    const x = r() * W, y = r() * H;
+    const dx = (x - W / 2) / (W * 0.36), dy = (y - H / 2) / (H * 0.5);
+    const inCenter = dx * dx + dy * dy < 1;
+    const s = 0.6 + r() * 0.9, c = petals[Math.floor(r() * petals.length)];
+    const g = el("g", { transform: `translate(${x} ${y}) scale(${s}) rotate(${r() * 40 - 20})`, opacity: inCenter ? 0.13 : 0.9 });
+    g.append(el("path", { d: "M0 0 C-3 14 4 24 0 40", stroke: "#3f8a4d", "stroke-width": 2.5, fill: "none" }));
+    g.append(el("path", { d: "M0 22 C-12 16 -16 26 -4 30 Z M1 30 C12 22 18 32 4 38 Z", fill: "#3f8a4d" }));
+    const kind = Math.floor(r() * 3);
+    if (kind === 0) for (let k = 0; k < 5; k++) g.append(el("circle", { cx: 8 * Math.cos(k * 1.2566), cy: 8 * Math.sin(k * 1.2566), r: 5.5, fill: c }));
+    else if (kind === 1) for (let k = 0; k < 8; k++) g.append(el("ellipse", { rx: 2.6, ry: 7, cy: -7, fill: c, transform: `rotate(${k * 45})` }));
+    else g.append(el("path", { d: "M-8 2 C-10 -10 -3 -6 0 -13 C3 -6 10 -10 8 2 C6 9 -6 9 -8 2 Z", fill: c }));
+    g.append(el("circle", { r: 3.2, fill: kind === 2 ? c : "#d9a520", stroke: "#0f261e", "stroke-width": .8 }));
+    svg.append(g);
+  }
+})();
+
+/* ---------- countdown ---------- */
+(function countdown() {
+  const start = new Date(CONFIG.partyStart).getTime(), end = new Date(CONFIG.partyEnd).getTime();
+  const list = document.getElementById("countdown"), note = document.getElementById("countdown-note");
+  const slots = {}; list.querySelectorAll("b").forEach(b => slots[b.dataset.u] = b);
+  function tick() {
+    const left = start - Date.now();
+    if (left <= 0) {
+      list.hidden = true; list.style.display = "none";
+      note.textContent = Date.now() < end + 6 * 36e5 ? "The gates are open. Let the revels begin!" : "The revels are ended. Long may she reign.";
+      clearInterval(timer); return;
+    }
+    slots.d.textContent = Math.floor(left / 864e5);
+    slots.h.textContent = Math.floor(left / 36e5) % 24;
+    slots.m.textContent = Math.floor(left / 6e4) % 60;
+    slots.s.textContent = Math.floor(left / 1e3) % 60;
+  }
+  const timer = setInterval(tick, 1000); tick();
+})();
+
+/* ---------- portraits: show a placeholder until photos are added ---------- */
+document.querySelectorAll("#gallery img").forEach(img => {
+  const swap = () => {
+    const ph = document.createElement("div");
+    ph.innerHTML = `<svg viewBox="0 0 100 130" role="img" aria-label="Portrait forthcoming" style="width:100%;height:100%">
+      <path d="M30 34 L26 14 L40 24 L50 8 L60 24 L74 14 L70 34 Z" fill="#d9a520"/>
+      <circle cx="50" cy="56" r="20" fill="#f1e6c8"/>
+      <path d="M12 130 C12 92 30 82 50 82 C70 82 88 92 88 130 Z" fill="#f1e6c8"/></svg>`;
+    img.replaceWith(ph);
+  };
+  if (img.complete && !img.naturalWidth) swap(); else img.addEventListener("error", swap);
+});
+
+/* ---------- calendar file ---------- */
+document.getElementById("ics").addEventListener("click", () => {
+  const stamp = iso => new Date(iso).toISOString().replace(/[-:]|\.\d{3}/g, "");
+  const ics = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Elizabeth Jubilee//EN", "BEGIN:VEVENT",
+    "UID:elizabeth-30-jubilee@faire", "DTSTAMP:" + stamp(Date.now()),
+    "DTSTART:" + stamp(CONFIG.partyStart), "DTEND:" + stamp(CONFIG.partyEnd),
+    "SUMMARY:Elizabeth's 30th birthday at the Renaissance Faire",
+    "LOCATION:New Braunfels Renaissance Faire\\, Heritage Village\\, 1370 Church Hill Dr\\, New Braunfels\\, TX",
+    "DESCRIPTION:Meet at the gates at 10 AM. Garb encouraged. Tickets: https://nbrenfaire.com",
+    "END:VEVENT", "END:VCALENDAR"].join("\r\n");
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([ics], { type: "text/calendar" }));
+  a.download = "elizabeth-30th-jubilee.ics";
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+});
+
+/* ---------- faire name scribe ---------- */
+(function scribe() {
+  const epithets = ["the Mead-Hearted", "the Unreasonably Merry", "the Twice-Napped", "the Bold", "the Gloriously Overdressed", "the Turkey-Legged", "the Quick of Wit", "the Slightly Lost", "the Glitter-Blessed", "the Unjousted", "the Loud", "the Honey-Tongued", "the Fashionably Late", "the Dragon-Adjacent", "the Well-Fed", "the Suspiciously Cheerful"];
+  const offices = ["Keeper of the Royal Snacks", "Warden of the Mead Tent", "High Inspector of Turkey Legs", "Bearer of the Birthday Cake", "Master of Revels", "Protector of the Queen's Good Side", "Official Taster of Pastries", "Herald of Loud Cheering", "Grand Admiral of the Pickle Cart", "Minister of Questionable Dancing", "Guardian of the Gift Pile", "Chief Applauder of Jousts", "Royal Photographer in Ordinary", "Chancellor of Naps"];
+  const duties = ["Bow at least once to the birthday queen, with flourish.", "Shout \"Huzzah!\" whenever Her Majesty takes a bite of anything.", "Challenge one stranger to a duel of compliments.", "Secure Her Majesty a seat at the joust.", "Lead a toast to thirty more years of her reign.", "Refer to all pickles as \"the royal gherkins\".", "Guard the queen's turkey leg with thy life.", "Compose a two-line ode to Elizabeth before sundown."];
+  const form = document.getElementById("scribe-form"), decree = document.getElementById("decree");
+  const hash = s => { let h = 2166136261; for (const ch of s.toLowerCase()) h = Math.imul(h ^ ch.codePointAt(0), 16777619) >>> 0; return h; };
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    const name = document.getElementById("guest").value.trim();
+    if (!name) return;
+    const calling = document.getElementById("calling").value, r = rng(hash(name + calling));
+    const pick = a => a[Math.floor(r() * a.length)];
+    decree.textContent = "";
+    const title = Object.assign(document.createElement("p"), { className: "name", textContent: `${calling} ${name} ${pick(epithets)}` });
+    const office = Object.assign(document.createElement("p"), { className: "duty", textContent: `${pick(offices)}. Thy sworn duty: ${pick(duties)}` });
+    decree.append(title, office);
+    decree.classList.remove("pop"); void decree.offsetWidth; decree.classList.add("pop");
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    for (let i = 0; i < 26; i++) {
+      const p = document.createElement("span"), a = Math.random() * Math.PI * 2, d = 90 + Math.random() * 220;
+      p.className = "petal";
+      p.style.background = COLORS[i % 5];
+      p.style.setProperty("--dx", Math.cos(a) * d + "px");
+      p.style.setProperty("--dy", Math.sin(a) * d * 0.7 + "px");
+      p.style.setProperty("--r", Math.random() * 720 - 360 + "deg");
+      decree.append(p);
+      p.addEventListener("animationend", () => p.remove());
+    }
+  });
+})();
+
+/* ---------- rsvp button ---------- */
+if (CONFIG.rsvpUrl) {
+  const a = Object.assign(document.createElement("a"), { className: "btn red", href: CONFIG.rsvpUrl, textContent: CONFIG.rsvpLabel });
+  document.getElementById("rsvp-slot").append(a);
+}
+</script>
+</body>
+</html>
